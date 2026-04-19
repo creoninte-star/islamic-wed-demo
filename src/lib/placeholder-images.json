@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Grand mosque palace at night",
+      "imageUrl": "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&q=80&w=2000",
+      "imageHint": "mosque night"
+    },
+    {
+      "id": "wedding1",
+      "description": "Romantic couple moment 1",
+      "imageUrl": "https://picsum.photos/seed/wedding1/600/800",
+      "imageHint": "wedding couple"
+    },
+    {
+      "id": "wedding2",
+      "description": "Romantic couple moment 2",
+      "imageUrl": "https://picsum.photos/seed/wedding2/600/800",
+      "imageHint": "wedding couple"
+    },
+    {
+      "id": "couple1",
+      "description": "Gallery couple 1",
+      "imageUrl": "https://picsum.photos/seed/couple1/600/800",
+      "imageHint": "muslim wedding"
+    },
+    {
+      "id": "couple2",
+      "description": "Gallery couple 2",
+      "imageUrl": "https://picsum.photos/seed/couple2/800/600",
+      "imageHint": "muslim wedding"
+    },
+    {
+      "id": "floral1",
+      "description": "Gallery floral 1",
+      "imageUrl": "https://picsum.photos/seed/floral1/600/800",
+      "imageHint": "wedding floral"
+    },
+    {
+      "id": "floral2",
+      "description": "Gallery floral 2",
+      "imageUrl": "https://picsum.photos/seed/floral2/800/600",
+      "imageHint": "wedding floral"
+    },
+    {
+      "id": "mosque1",
+      "description": "Gallery mosque 1",
+      "imageUrl": "https://picsum.photos/seed/mosque1/600/800",
+      "imageHint": "islamic architecture"
+    },
+    {
+      "id": "venue1",
+      "description": "Gallery venue 1",
+      "imageUrl": "https://picsum.photos/seed/venue1/800/600",
+      "imageHint": "luxury ballroom"
+    }
+  ]
 }

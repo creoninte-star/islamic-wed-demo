@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['Jost', 'sans-serif'],
+        headline: ['Cormorant Garamond', 'serif'],
         code: ['monospace'],
       },
       colors: {
@@ -55,16 +55,16 @@ export default {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))',
+        gold: {
+          DEFAULT: '#c9a84c',
+          foreground: '#f9f4ec',
         },
+        navy: {
+          DEFAULT: '#0a0d1a',
+          lighter: '#1a1f33',
+        },
+        ivory: '#f9f4ec',
+        rose: '#c2847a',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -88,10 +88,25 @@ export default {
             height: '0',
           },
         },
+        'shimmer-sweep': {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        'float-petal': {
+          '0%': { transform: 'translateY(-10%) rotate(0deg)', opacity: '0' },
+          '10%': { opacity: '0.6' },
+          '90%': { opacity: '0.3' },
+          '100%': { transform: 'translateY(110vh) rotate(360deg)', opacity: '0' },
+        },
+        'mandala-draw': {
+          to: { strokeDashoffset: '0' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'shimmer': 'shimmer-sweep 4s linear infinite',
+        'petal': 'float-petal linear infinite',
       },
     },
   },
