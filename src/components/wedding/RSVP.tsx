@@ -22,7 +22,16 @@ export default function RSVP() {
     }, 2000);
   };
 
-  if (!mounted) return null;
+  // Prevent hydration mismatch by only rendering the form after the client mount
+  if (!mounted) {
+    return (
+      <section id="rsvp" className="py-24 md:py-32 bg-navy-lighter/10">
+        <div className="max-w-[800px] mx-auto px-6 text-center">
+          <h2 className="font-headline text-4xl md:text-6xl text-ivory mb-6 italic opacity-0">Will You Join Us?</h2>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="rsvp" className="py-24 md:py-32 bg-navy-lighter/10 relative overflow-hidden">
@@ -86,7 +95,7 @@ export default function RSVP() {
                   <label className="font-body text-[10px] text-gold uppercase tracking-[0.3em] pl-1">Number of Guests</label>
                   <div className="relative">
                     <select className="w-full bg-navy-lighter/20 border-b border-gold/20 p-4 focus:outline-none focus:border-gold transition-all rounded-t-xl appearance-none hover:bg-navy-lighter/40 cursor-pointer">
-                      {[1,2,3,4,5].map(n => <option key={n} value={n} className="bg-navy">{n} {n === 1 ? 'Guest' : 'Guests'}</option>)}
+                      {[1,2,3,4,5].map(n => <option key={n} value={n.toString()} className="bg-navy">{n} {n === 1 ? 'Guest' : 'Guests'}</option>)}
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gold/50">
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M6 9L1 4h10z"/></svg>

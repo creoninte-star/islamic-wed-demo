@@ -18,6 +18,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent hydration mismatch by not rendering the interactive navigation until mounted
   if (!mounted) return null;
 
   const navLinks = [
@@ -63,6 +64,7 @@ export default function Navbar() {
           <button
             className="md:hidden text-gold p-2"
             onClick={() => setIsMenuOpen(true)}
+            aria-label="Open Menu"
           >
             <Menu size={24} />
           </button>
@@ -79,6 +81,7 @@ export default function Navbar() {
         <button
           className="absolute top-6 right-6 text-gold p-2"
           onClick={() => setIsMenuOpen(false)}
+          aria-label="Close Menu"
         >
           <X size={32} />
         </button>

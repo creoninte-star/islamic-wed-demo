@@ -8,7 +8,7 @@ export default function IntroAnimation() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 1000); // Shortened from 3500ms for faster previewing
+    }, 2000); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -34,11 +34,10 @@ export default function IntroAnimation() {
           <path d="M50 10 Q60 30 50 50 Q40 30 50 10" transform="rotate(225 50 50)" />
           <path d="M50 10 Q60 30 50 50 Q40 30 50 10" transform="rotate(270 50 50)" />
           <path d="M50 10 Q60 30 50 50 Q40 30 50 10" transform="rotate(315 50 50)" />
-          {/* Inner details */}
           <path d="M50 20 L55 35 L70 40 L55 45 L50 60 L45 45 L30 40 L45 35 Z" fill="none" />
         </svg>
       </div>
-      <div className="absolute bottom-12 text-gold font-headline text-lg tracking-[0.3em] uppercase opacity-0 animate-[fade-in_1s_ease-out_2s_forwards]">
+      <div className="absolute bottom-12 text-gold font-headline text-lg tracking-[0.3em] uppercase opacity-0 animate-[fade-in_1s_ease-out_1s_forwards]">
         Bismillah ir-Rahman ir-Rahim
       </div>
     </div>
