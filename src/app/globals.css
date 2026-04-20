@@ -40,17 +40,30 @@
 @layer utilities {
   .clip-reveal {
     clip-path: inset(100% 0 0 0);
-    transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(30px);
+    transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .clip-reveal.active {
     clip-path: inset(0 0 0 0);
+    transform: translateY(0);
   }
+  
+  .fade-up-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fade-up-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .shimmer-gold {
     background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
     background-size: 200% 100%;
   }
   .glass-card {
-    @apply bg-navy-lighter/60 backdrop-blur-xl border border-gold/20 shadow-2xl;
+    @apply bg-navy-lighter/60 backdrop-blur-xl border border-gold/20 shadow-2xl transition-all duration-500 hover:border-gold/40;
   }
   .perspective-1000 {
     perspective: 1000px;
@@ -74,4 +87,30 @@
 .islamic-watermark {
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z' fill='%23c9a84c' fill-opacity='0.04'/%3E%3C/svg%3E");
   background-repeat: repeat;
+}
+
+@keyframes shimmer-sweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float-petal {
+  0% { transform: translateY(-10%) rotate(0deg) translateX(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  50% { translateX: 20px; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(110vh) rotate(360deg) translateX(-20px); opacity: 0; }
+}
+
+@keyframes mandala-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes title-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(201, 168, 76, 0.2); }
+  50% { text-shadow: 0 0 30px rgba(201, 168, 76, 0.5); }
+}
+
+.animate-title-glow {
+  animation: title-glow 4s ease-in-out infinite;
 }

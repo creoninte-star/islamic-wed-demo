@@ -7,9 +7,15 @@ interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  variant?: "clip" | "fade-up";
 }
 
-export default function ScrollReveal({ children, className, delay = 0 }: ScrollRevealProps) {
+export default function ScrollReveal({ 
+  children, 
+  className, 
+  delay = 0,
+  variant = "clip" 
+}: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isIntersecting, setIntersecting] = useState(false);
 
@@ -29,11 +35,13 @@ export default function ScrollReveal({ children, className, delay = 0 }: ScrollR
     return () => observer.disconnect();
   }, [delay]);
 
+  const variantClass = variant === "clip" ? "clip-reveal" : "fade-up-reveal";
+
   return (
     <div
       ref={ref}
       className={cn(
-        "clip-reveal",
+        variantClass,
         isIntersecting && "active",
         className
       )}
