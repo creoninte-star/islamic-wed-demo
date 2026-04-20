@@ -30,24 +30,24 @@ export default function RSVP() {
       
       <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center">
         <ScrollReveal>
-          <h2 className="font-headline text-4xl md:text-6xl text-ivory mb-6 italic">
+          <h2 className="font-headline text-4xl md:text-6xl text-ivory mb-6 italic leading-tight animate-title-glow">
             Will You Join Us?
           </h2>
-          <p className="font-body text-ivory/60 mb-16 tracking-[0.15em] uppercase text-xs">
+          <p className="font-body text-ivory/60 mb-16 tracking-[0.15em] uppercase text-[10px] md:text-xs">
             Please honor us with your response by October 15th, 2026.
           </p>
         </ScrollReveal>
 
         {isSubmitted ? (
           <ScrollReveal variant="fade-up">
-             <div className="glass-card p-16 rounded-[40px] animate-in fade-in zoom-in duration-1000">
-                <div className="w-24 h-24 mx-auto bg-gold/10 rounded-full flex items-center justify-center mb-8 border border-gold/30">
-                   <svg className="w-12 h-12 text-gold animate-[bounce_2s_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <div className="glass-card p-12 md:p-16 rounded-[40px] animate-in fade-in zoom-in duration-1000">
+                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto bg-gold/10 rounded-full flex items-center justify-center mb-8 border border-gold/30">
+                   <svg className="w-10 h-10 md:w-12 md:h-12 text-gold animate-[bounce_2s_infinite]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
                    </svg>
                 </div>
-                <h3 className="font-headline text-4xl text-ivory mb-6 italic">Shukran!</h3>
-                <p className="font-body text-ivory/80 text-xl leading-relaxed">
+                <h3 className="font-headline text-3xl md:text-4xl text-ivory mb-6 italic">Shukran!</h3>
+                <p className="font-body text-ivory/80 text-lg md:text-xl leading-relaxed">
                   We have received your response. <br />
                   <span className="text-gold italic">We can&apos;t wait to celebrate with you!</span>
                 </p>
@@ -131,7 +131,9 @@ export default function RSVP() {
                   isSubmitting && "opacity-70 cursor-not-allowed"
                 )}
               >
-                <span className="relative z-10">{isSubmitting ? "Sending Your Response..." : "Send RSVP"}</span>
+                <span className="relative z-10">
+                  {isSubmitting ? "Saving Your Spot..." : "Save My Spot"}
+                </span>
                 {/* Shimmer Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:animate-[shimmer-sweep_1.5s_infinite] transition-transform" />
               </button>
